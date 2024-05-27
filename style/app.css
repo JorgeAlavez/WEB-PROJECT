@@ -1,0 +1,249 @@
+:root{
+    --blanco:#ffffff;
+    --colorHeader: #AFEEEE;
+
+    --fuentePrincipal: 'Monserrat', sans-serif;
+}
+
+/*****************************************************/
+/*******************GLOBALES***********************/
+/****************************************************/
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-optical-sizing: auto;
+    margin: 0;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+/**UTLIDADES**/
+h1{
+    font-size: 5rem;
+}
+
+/*****************************************************/
+/*******************HEADER***********************/
+/****************************************************/
+
+.contenido-header{
+    background-color: var(--colorHeader);
+    
+}
+
+.hero{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5% 0 0;
+    
+}
+
+.search{
+    width: 50rem;
+    display: flex;
+    padding: 1rem;
+    border-radius: 5px 0 0 5px;
+}
+
+.buttonsearch{
+    background-color: #ee748f;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    color: white;
+}
+
+.logoTiendaVirtual{
+    display: flex;
+    font-size: 2rem;
+}
+
+.logoimg{
+    display: flex;
+    margin-top: 2%;
+    width: 15rem;
+    height: 10rem;
+}
+
+
+.contenido-header .logo{
+    display: flex;
+    font-size: 1rem;
+}
+
+.fa-basket-shopping{
+    font-size: 3rem;
+    display: flex;
+
+}
+
+.iniciarses{
+    font-size: 1.5rem;
+    display: inline;
+}
+/*****************************************************/
+/*******************NAVEGACION***********************/
+/****************************************************/
+.contenedor-nav{
+    font-size: 2rem;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.menu {
+	display: flex;
+	gap: 8rem;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.menu a {
+	text-decoration: none;
+	font-size: 1.3rem;
+	color: var(--dark-color);
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.menu a::after {
+	content: '';
+	width: 1.5rem;
+	height: 2px;
+	background-color: #fff;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+	opacity: 1;
+}
+
+/****CONTENEDOR BODY**/
+
+
+
+.contenedorBody{
+   
+    margin: 3rem 10rem 3rem 10rem;
+    
+}
+
+/*****************************************************/
+/*******************BARRA DE BENEFICIOS**********************/
+/****************************************************/
+
+.contenedorTituloOfertas{
+    background-color: #f6c7d1;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    align-items: center;
+    
+}
+.imagenContenedorOfertas{
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+/*****************************************************/
+/*******************MEJORES OFERTAS**********************/
+/****************************************************/
+
+.contenedorMejoresOfertas{
+    display: flex;
+    flex-wrap: wrap; 
+    margin: 5%;
+    
+}
+
+.cardsMejoresOfertas{
+    flex: 1 0 30%; /* Toma 50% del ancho del contenedor */
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+/***********FOOTER********/
+
+
+
+.footer{
+    background-color: var(--colorHeader);
+    padding: 1rem 0;
+    margin-top: 2rem;
+
+}
+
+.footer__texto{
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+/************CARRUSEL DE CATEOGIRAS*********/
+
+/* .barraCarruselCategorias{
+    margin: 10%;
+    background-color: #f6c7d1;
+    display: flex;
+   
+} */
+
+.cardsCarrusel{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin: 0 5rem;
+    width: calc(100%/3);
+}
+
+.card-title{
+    font-size: 2rem;
+    
+    
+}
+
+
+/************CARDS DE LOS 100 PRODUCTOS*********/
+
+.contenedor100productosdiv{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
