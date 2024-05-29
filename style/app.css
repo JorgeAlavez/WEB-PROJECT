@@ -243,7 +243,15 @@ h1{
 
 /************CARDS DE LOS 100 PRODUCTOS*********/
 
-.contenedor100productosdiv{
+/* .contenedor100Productosdiv{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-}
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-content: stretch;
+    justify-content: center;
+    align-items: start;
+} */
+
+ .contenedor100Productos{
+  margin: 5%;
+} 
