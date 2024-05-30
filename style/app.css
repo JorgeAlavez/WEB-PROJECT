@@ -1,6 +1,8 @@
 :root{
     --blanco:#ffffff;
-    --colorHeader: #AFEEEE;
+    --colorHeader: #f7c59f;
+    --colorHeader2: #def7f6;
+    --rosa: #ff6688;
 
     --fuentePrincipal: 'Monserrat', sans-serif;
 }
@@ -35,7 +37,7 @@ h1{
 /****************************************************/
 
 .contenido-header{
-    background-color: var(--colorHeader);
+    background-color: var(--colorHeader2);
     
 }
 
@@ -49,14 +51,14 @@ h1{
 }
 
 .search{
-    width: 50rem;
+    width: 100rem;
     display: flex;
     padding: 1rem;
     border-radius: 5px 0 0 5px;
 }
 
 .buttonsearch{
-    background-color: #ee748f;
+    background-color: #ff6688;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
     color: white;
@@ -72,6 +74,7 @@ h1{
     margin-top: 2%;
     width: 15rem;
     height: 10rem;
+    cursor: pointer;
 }
 
 
@@ -83,12 +86,28 @@ h1{
 .fa-basket-shopping{
     font-size: 3rem;
     display: flex;
+    cursor: pointer;
 
 }
 
 .iniciarses{
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: inline;
+    cursor: pointer;
+}
+
+.btnini{
+    /* display: block; */
+    font-family: var(--fuenteHeading);
+    color: #ffffff;
+    background-color: var(--rosa);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border-radius: .8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+
 }
 /*****************************************************/
 /*******************NAVEGACION***********************/
@@ -143,53 +162,39 @@ h1{
 
 
 
-.contenedorBody{
+/* .contenedorBody{
    
     margin: 3rem 10rem 3rem 10rem;
     
-}
+} */
 
 /*****************************************************/
 /*******************BARRA DE BENEFICIOS**********************/
 /****************************************************/
 
-.contenedorTituloOfertas{
-    background-color: #f6c7d1;
+
+.fondoBienvenida{
+    background-image: url(../img/imagenFondoPresentacion.jpg);
+    background-color: rgb(150,150,150);
+    background-blend-mode: soft-light;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60rem;
     display: flex;
-    justify-content: space-around;
-    border-radius: 0.5rem;
-    padding: 1rem;
     align-items: center;
-    
+    justify-content: center;
+    color: #ffffff;
+    font-size: 3rem;
 }
-.imagenContenedorOfertas{
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-}
+
+
+
 
 /*****************************************************/
 /*******************MEJORES OFERTAS**********************/
 /****************************************************/
 
-.contenedorMejoresOfertas{
-    display: flex;
-    flex-wrap: wrap; 
-    margin: 5%;
-    
-}
-
-.cardsMejoresOfertas{
-    flex: 1 0 30%; /* Toma 50% del ancho del contenedor */
-    box-sizing: border-box;
-    padding: 20px;
-    margin: 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    text-align: center;
-    font-size: 18px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 
 
@@ -236,11 +241,15 @@ h1{
 
 .card-title{
     font-size: 2rem;
-    
-    
+   
 }
 
+.tamañoImagenNav{
+    width:  400px;
+    height: 300px;
+}
 
+ 
 /************CARDS DE LOS 100 PRODUCTOS*********/
 
 /* .contenedor100Productosdiv{
@@ -255,3 +264,26 @@ h1{
  .contenedor100Productos{
   margin: 5%;
 } 
+
+/****ESTRELLAS DE RATING*****/
+
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+  }
+  .stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+  }
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  .stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #f8ce0b;
+  }

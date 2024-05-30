@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //         </div>
         //     `;
         //     }
-
+        
         let productosHTML = "";
         let divProductos = document.querySelector("div#productos");
         ObjTienda.forEach(objeto => {
@@ -56,11 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (img.height <= 1000 && !imageFound) {
                             productosHTML += `
                             <div class="col">
-                            <div class="card h-100" style="width: 350px;">
+                            <div class="card h-100" style="width: 330px;">
                               <img src="${imagenUrl}" class="card-img-top" alt="...">
                               <div class="card-body">
-                                <h5 class="card-title">${objeto.id}</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h5 class="card-title">${objeto.title}</h5>
+                                <p class="card-text">
+                                  <div class="stars-outer">
+                                    <div class="stars-inner estrella${objeto.id}"></div>
+                                  </div>
+                                </p>
+                                <p class="card-text">${objeto.price}</p>
+                                <p class="card-text">${objeto.discountPercentage}</p>
                               </div>
                             </div>
                           </div>
@@ -70,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     };
                 }
+                
             });
 
             // if(objeto.id == 42 || objeto.id == 68){
@@ -88,4 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
             // }
         });
 
+        const starTotal = 5;
+
+        ObjTienda.forEach(objeto => {
+          const starPercentage = (objeto.rating / starTotal) * 100;
+          const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+          document.querySelector(`.estrella${objeto.id} .stars-inner`).style.width = starPercentageRounded;
+           
+        });
+
 });
+
