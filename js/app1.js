@@ -49,15 +49,25 @@ document.addEventListener("DOMContentLoaded", () => {
         ObjTienda.forEach(objeto => {
             let imageFound = false; // Flag para indicar si se ha encontrado una imagen válida
             objeto.images.forEach(imagenUrl => {
+                let precioDescuento = 0;
                 if (!imageFound) {
                     const img = new Image();
                     img.src = imagenUrl;
                     img.onload = () => {
                         if (img.height <= 1000 && !imageFound) {
+                            calculoDescuento = (objeto.price)*(1-(objeto.discountPercentage/100))
+                            precioDescuento = Math.round(calculoDescuento)
+                            objeto.discountPercentage = Math.round(objeto.discountPercentage)
                             productosHTML += `
                             <div class="col">
-                            <div class="card h-100" style="width: 330px;">
-                              <img src="${imagenUrl}" class="card-img-top" alt="...">
+                            <div class="card h-100 border-info mb-20" style="width: 330px;">
+                              <div class="contenedorImagen">
+                                <img src="${imagenUrl}" class=" imagenCard card-img-top" alt="...">
+                                <div class="overlay">
+                                  <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-cart-plus mr-2"></i>
+                                  Añadir al carrito</button>
+                                </div>
+                              </div>
                               <div class="card-body">
                                 <h5 class="card-title">${objeto.title}</h5>
                                 <p class="card-text">
@@ -65,8 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <div class="stars-inner estrella${objeto.id}"></div>
                                   </div>
                                 </p>
-                                <p class="card-text">${objeto.price}</p>
-                                <p class="card-text">${objeto.discountPercentage}</p>
+                                <p class="card-text precioCard">$ ${objeto.price}</p>
+                                <p class="card-text descuentoCard">Descuento: ${objeto.discountPercentage}%</p>
+                                <p class="card-text preciodescuentoCard">Precio final: $${precioDescuento}</p>
                               </div>
                             </div>
                           </div>

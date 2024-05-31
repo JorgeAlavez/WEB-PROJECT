@@ -172,6 +172,11 @@ h1{
 /*******************BARRA DE BENEFICIOS**********************/
 /****************************************************/
 
+.contenedorBarraBenificios{
+    margin-top: 5rem;
+    font-size: 2rem;
+    align-items: center;
+}
 
 .fondoBienvenida{
     background-image: url(../img/imagenFondoPresentacion.jpg);
@@ -190,15 +195,21 @@ h1{
 
 
 
+/**************************/
 
-/*****************************************************/
-/*******************MEJORES OFERTAS**********************/
-/****************************************************/
-
-
-
-
-
+.contenido100Productos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+.tituloNuestrosProductos{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    background-color:var(--colorHeader2);
+    border-radius: 1rem;
+}
 
 
 
@@ -207,7 +218,7 @@ h1{
 
 
 .footer{
-    background-color: var(--colorHeader);
+    background-color: var(--colorHeader2);
     padding: 1rem 0;
     margin-top: 2rem;
 
@@ -263,7 +274,53 @@ h1{
 
  .contenedor100Productos{
   margin: 5%;
-} 
+}
+
+
+/***************CARDS*******************/
+
+.precioCard{
+    font-size: 2rem;
+    text-decoration: line-through;
+}
+
+.descuentoCard{
+    background-color: #f4565c;
+    font-size: 2rem;
+    border-radius: .2rem;
+    display: inline;
+}
+
+.preciodescuentoCard{
+    font-size: 2.5rem;
+}
+
+.contenedorImagen{
+    position: relative;
+}
+
+.imagenCard{
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.overlay{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.contenedorImagen:hover .imagenCard {
+    opacity: 0.2;
+}
+
+.contenedorImagen:hover .overlay{
+    opacity: 1;
+}
 
 /****ESTRELLAS DE RATING*****/
 
