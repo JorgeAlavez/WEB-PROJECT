@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <p class="card-text precioCard">$ ${objeto.price}</p>
                                 <p class="card-text descuentoCard">Descuento: ${objeto.discountPercentage}%</p>
                                 <p class="card-text preciodescuentoCard">Precio final: $${precioDescuento}</p>
+                                <button class="boton-card">Ver Detalles</button>
                               </div>
                             </div>
                           </div>

@@ -344,3 +344,10 @@ h1{
     content: "\f005 \f005 \f005 \f005 \f005";
     color: #f8ce0b;
   }
+
+  .boton-card{
+    font-size: 1.5rem;
+    border-radius: .9rem;
+    font-style: italic;
+    background-color: #ffbecc
+  }
