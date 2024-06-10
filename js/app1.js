@@ -54,15 +54,15 @@ let divProductos = document.querySelector("div#productos");
   });
 });
 
-const starTotal = 5;
-ObjTienda.forEach(objeto => {
-  const starPercentage = (objeto.rating / starTotal) * 100;
-  const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-  document.querySelector(`.estrella${objeto.id} .stars-inner`).style.width = starPercentageRounded;   
-  });
+// const starTotal = 5;
+// ObjTienda.forEach(objeto => {
+//   const starPercentage = (objeto.rating / starTotal) * 100;
+//   const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+//   document.querySelector(`.estrella${objeto.id} .stars-inner`).style.width = starPercentageRounded;   
+//   });
 
 
-  const searchBar = document.querySelector("#searchBar");
+
 
   function displayProducts(products) {
     let productosHTML = "";
@@ -111,16 +111,41 @@ ObjTienda.forEach(objeto => {
     });
 }
 
-searchBar.addEventListener("input", (e) => {
-    const searchString = e.target.value.toLowerCase();
+const searchBar = document.querySelector("#searchBar");
+const searchButton = document.querySelector("#searchButton");
+
+searchButton.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent the form from submitting which would refresh the page
+    const searchString = searchBar.value.toLowerCase();
     const filteredProducts = ObjTienda.filter(product => {
         return product.title.toLowerCase().includes(searchString);
     });
     displayProducts(filteredProducts);
+    console.log(filteredProducts);
 });
 
-displayProducts(ObjTienda);
 
+window.addEventListener('scroll', function() {
+    if (window.innerWidth >= 1000) {
+    var header = document.querySelector('.contenido-header');
+    // var navbar = document.querySelector('.navbar');
+    var section = document.querySelector('.tituloNuestrosProductos');
+  
+    var sectionPosition = section.getBoundingClientRect().top + window.scrollY;
+  
+    if (window.scrollY > sectionPosition) {
+      header.style.position = 'absolute';
+      header.style.top = `${sectionPosition}px`;
+      navbar.style.position = 'absolute';
+      navbar.style.top = `${sectionPosition}px`;
+    } else {
+      header.style.position = 'fixed';
+      header.style.top = '0';
+      navbar.style.position = 'fixed';
+      navbar.style.top = '0';
+    }
+    }
+  });
 
 
 });

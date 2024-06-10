@@ -38,6 +38,10 @@ h1{
 
 .contenido-header{
     background-color: var(--colorHeader2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Esto asegura que el header esté siempre en la parte superior */
     
 }
 
@@ -110,6 +114,23 @@ h1{
 
 }
 
+
+.fondoBienvenida{
+    background-image: url(../img/imagenFondoPresentacion.jpg);
+    margin-top: 100px; /*Ajusta este valor al tamaño de tu header y barra de navegación*/
+    background-color: rgb(150,150,150);
+    background-blend-mode: soft-light;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 3rem;
+}
+
 @media (max-width: 500px) {
     .hero{
         display: flex;
@@ -140,6 +161,16 @@ h1{
 }
 
 @media (max-width: 985px) {
+
+    .contenido-header{
+        position: static;
+       
+    }
+
+    .fondoBienvenida{
+        margin-top: 0;
+    }
+
     .hero{
         display: flex;
         flex-wrap: wrap;
@@ -159,6 +190,8 @@ h1{
 }
 
 @media (max-width: 1693px) {
+
+    
     .hero{
         display: flex;
         align-items: center;
@@ -231,20 +264,6 @@ h1{
     align-items: center;
 }
 
-.fondoBienvenida{
-    background-image: url(../img/imagenFondoPresentacion.jpg);
-    background-color: rgb(150,150,150);
-    background-blend-mode: soft-light;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 60rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 3rem;
-}
 
 
 
