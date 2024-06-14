@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let productosHTML = "";
 let divProductos = document.querySelector("div#productos");
   ObjTienda.forEach(objeto => {
+    console.log(objeto.category)
     let imageFound = false; // Flag para indicar si se ha encontrado una imagen válida
     objeto.images.forEach(imagenUrl => {
     let precioDescuento = 0;
@@ -22,8 +23,8 @@ let divProductos = document.querySelector("div#productos");
           objeto.discountPercentage = Math.round(objeto.discountPercentage)
           productosHTML += `
                               
-          <div class="col-md-4">
-          <div class="card h-100" class="border-succes mb-3" style="min-width: 79%;">
+          <div class="col-md-4 my-5">
+          <div class="card h-100 border-dark" class="border-succes mb-3" style="min-width: 79%;">
            <div class="contenedorImagen">
               <img src="${imagenUrl}" class=" imagenCard card-img-top" alt="...">
               <div class="overlay">
@@ -67,6 +68,7 @@ let divProductos = document.querySelector("div#productos");
   function displayProducts(products) {
     let productosHTML = "";
     products.forEach(objeto => {
+      console.log(objeto.category)
         let imageFound = false;
         objeto.images.forEach(imagenUrl => {
             if (!imageFound) {
@@ -77,10 +79,14 @@ let divProductos = document.querySelector("div#productos");
                         const calculoDescuento = (objeto.price) * (1 - (objeto.discountPercentage / 100));
                         const precioDescuento = Math.round(calculoDescuento);
                         objeto.discountPercentage = Math.round(objeto.discountPercentage);
+
+      
+
                         productosHTML += `
-                            <div class="col-md-4">
-                                <div class="card h-100" class="border-succes mb-3" style="min-width: 79%;">
+                            <div class="col-md-4 my-3">
+                                <div class="card my-3 h-100 border-dark" class="border-succes mb-3" style="min-width: 79%;">
                                     <div class="contenedorImagen">
+                                    
                                         <img src="${imagenUrl}" class="imagenCard card-img-top" alt="...">
                                         <div class="overlay">
                                             <button class="btn btn-outline-secondary btn-sm">
@@ -88,12 +94,12 @@ let divProductos = document.querySelector("div#productos");
                                             </button>
                                         </div>
                                     </div>
+                                   
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="#" class="enlaceIndividual">${objeto.title}</a></h5>
+                                        
                                         <p class="card-text">
-                                            <div class="stars-outer">
-                                                <div class="stars-inner estrella${objeto.id}"></div>
-                                            </div>
+                                            
                                         </p>
                                         <p class="card-text precioCard">$ ${objeto.price}</p>
                                         <p class="card-text descuentoCard">Descuento: ${objeto.discountPercentage}%</p>
@@ -108,8 +114,15 @@ let divProductos = document.querySelector("div#productos");
                 };
             }
         });
+        
+    
+      document.getElementById('productos').innerHTML = productosHTML;
+        
     });
+
 }
+
+
 
 const searchBar = document.querySelector("#searchBar");
 const searchButton = document.querySelector("#searchButton");
@@ -136,16 +149,16 @@ window.addEventListener('scroll', function() {
     if (window.scrollY > sectionPosition) {
       header.style.position = 'absolute';
       header.style.top = `${sectionPosition}px`;
-      navbar.style.position = 'absolute';
-      navbar.style.top = `${sectionPosition}px`;
+     
     } else {
       header.style.position = 'fixed';
       header.style.top = '0';
-      navbar.style.position = 'fixed';
-      navbar.style.top = '0';
+      
     }
     }
   });
+
+  
 
 
 });
