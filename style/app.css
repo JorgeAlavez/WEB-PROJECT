@@ -1,3 +1,4 @@
+
 :root{
     --blanco:#ffffff;
     --colorHeader: #f7c59f;
@@ -268,7 +269,7 @@ h1{
 
 
 .tituloNuestrosProductos{
-    margin: 5%;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     background-color:var(--colorHeader2);
@@ -422,3 +423,4 @@ h1{
     text-align: center;
     font-size: 2rem;
 }
+
