@@ -21,7 +21,7 @@
         <div class="contenido-header">
             <div class="contenido hero">
                 <div class="logoTiendaVirtual">
-                    <a href="index.html"><img src="img/logotipor.png" class="logoimg" alt="logotipo"></a>
+                    <a href="index.php"><img src="img/logotipor.png" class="logoimg" alt="logotipo"></a>
                     <h1>FrontStore</h1>
                 </div>
                 <div class="search">
@@ -31,7 +31,7 @@
                 <i class="fa-solid fa-basket-shopping"></i>
                 <div class="iniciarses">
                     <i class="fa-solid fa-user"></i>
-                    <a href="iniciosesion/WEB-PROJECT-master/principal.html"><button class="btnini">Iniciar sesión</button></a>
+                    <a href="iniciosesion/WEB-PROJECT-master/principal.php"><button class="btnini">Iniciar sesión</button></a>
                 </div>
             </div>
         
@@ -40,9 +40,9 @@
         <div class="container-navbar">
             <nav class="navbar container">
                 <ul class="menu">
-                    <li><a href="masVendido.html">Lo más vendido</a></li>
-                    <li><a href="promociones.html">Promociones</a></li>
-                    <li><a href="outlet.html">Outlet</a></li>
+                    <li><a href="masVendido.php">Lo más vendido</a></li>
+                    <li><a href="promociones.php">Promociones</a></li>
+                    <li><a href="outlet.php">Outlet</a></li>
                 </ul>
             </nav>
         </div>
@@ -94,7 +94,7 @@
           <div class="carousel-item active">
             <div class="cardsCarrusel">
                 <div class="card text-center" style="max-width: 40rem; position: relative;">
-                  <a href="ropayacce.html" style="color: inherit; text-decoration: none;">
+                  <a href="ropayacce.php" style="color: inherit; text-decoration: none;">
                     <img src="img/ropanav_red.jpg" class="card-img-top tamañoImagenNav" alt="...">
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h5 class="card-title text-white">Ropa y Accesorios</h5>
@@ -102,7 +102,7 @@
                   </a>
                 </div>
                 <div class="card text-center" style="max-width:40rem;">
-                  <a href="automotriz.html" style="color: inherit; text-decoration: none;">
+                  <a href="automotriz.php" style="color: inherit; text-decoration: none;">
                     <img src="img/moto (1).jpg" class="card-img-top tamañoImagenNav" alt="...">
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h5 class="card-title text-white">Automotriz</h5>
@@ -110,7 +110,7 @@
                   </a>
                 </div>
                 <div class="card text-center" style="max-width: 40rem;">
-                  <a href="bellezaycui.html" style="color: inherit; text-decoration: none;">
+                  <a href="bellezaycui.php" style="color: inherit; text-decoration: none;">
                     <img src="img/accesoriosnav_red.jpg" class="card-img-top tamañoImagenNav" alt="...">
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h5 class="card-title text-white">Belleza y Cuidado Personal</h5>
@@ -122,7 +122,7 @@
           <div class="carousel-item active">
             <div class="cardsCarrusel">
                 <div class="card text-center" style="width: 40rem;">
-                  <a href="electronica.html" style="color: inherit; text-decoration: none;">
+                  <a href="electronica.php" style="color: inherit; text-decoration: none;">
                     <img src="img/gamingnav_red.jpg" class="card-img-top tamañoImagenNav" alt="...">
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h5 class="card-title text-white">Electrónica</h5>
@@ -130,7 +130,7 @@
                   </a>
                 </div>
                 <div class="card text-center" style="width:40rem;">
-                  <a href="comestibles.html" style="color: inherit; text-decoration: none;">
+                  <a href="comestibles.php" style="color: inherit; text-decoration: none;">
                     <img src="img/comestibles1.jpeg" class="card-img-top tamañoImagenNav" alt="...">
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h5 class="card-title text-white">Comestibles</h5>
@@ -138,7 +138,7 @@
                   </a>
                 </div>
                 <div class="card text-center" style="width: 40rem;">
-                  <a href="hogar.html" style="color: inherit; text-decoration: none;">
+                  <a href="hogar.php" style="color: inherit; text-decoration: none;">
                     <img src="img/hogarnav_red.jpg" class="card-img-top tamañoImagenNav" alt="...">
                     <div class="card-img-overlay d-flex justify-content-center align-items-center">
                       <h5 class="card-title text-white">Hogar</h5>
