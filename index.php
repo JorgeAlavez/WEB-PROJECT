@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- https://localhost/tienda_virtualv2/index.php -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">

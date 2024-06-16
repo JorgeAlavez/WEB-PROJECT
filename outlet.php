@@ -21,7 +21,7 @@
         <div class="contenido-header">
             <div class="contenido hero">
                 <div class="logoTiendaVirtual">
-                    <a href="index.html"><img src="img/logotipor.png" class="logoimg" alt="logotipo"></a>
+                    <a href="index.php"><img src="img/logotipor.png" class="logoimg" alt="logotipo"></a>
                     <h1>FrontStore</h1>
                 </div>
                 <div class="search">
@@ -40,9 +40,9 @@
         <div class="container-navbar">
             <nav class="navbar container">
                 <ul class="menu">
-                    <li><a href="masVendido.html">Lo más vendido</a></li>
-                    <li><a href="promociones.html">Promociones</a></li>
-                    <li><a href="outlet.html">Outlet</a></li>
+                    <li><a href="masVendido.php">Lo más vendido</a></li>
+                    <li><a href="promociones.php">Promociones</a></li>
+                    <li><a href="outlet.php">Outlet</a></li>
                 </ul>
             </nav>
         </div>
