@@ -1,3 +1,18 @@
+ <?php
+ require 'config/config.php';
+
+ 
+
+
+ ?>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -28,7 +43,7 @@
       <div class="contenido-header">
           <div class="contenido hero">
               <div class="logoTiendaVirtual">
-                  <a href="index.html"><img src="img/logotipor.png" class="logoimg" alt="logotipo"></a>
+                  <a href="index.php"><img src="img/logotipor.png" class="logoimg" alt="logotipo"></a>
                   
                   <h1>FrontStore</h1>
               </div>
@@ -36,7 +51,7 @@
                   <input type="text" class="search" placeholder="Buscar">
                   <button class="buttonsearch"><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
-              <i class="fa-solid fa-basket-shopping"></i>
+              <i class="fa-solid fa-basket-shopping"><a href="/carrito.php"><span id="num_cart" class="badge rounded-pill bg-dark"><?php echo $num_cart;?></span></a></i>
               <div class="iniciarses">
                   <i class="fa-solid fa-user"></i>
                   <a href="#"><button class="btnini">Iniciar sesión</button></a>
@@ -81,10 +96,11 @@
 <!-----------------Productos recomendados -------------------- -->    
 
 
-<main>
-   <div id="productos" class="row row-cols-1 row-cols-md-4 g-5"></div>
-</main>
-
+<section class="gallery">
+    <div class="container">
+        <div id="productos" class="row"></div>
+    </div> 
+</section>
 
 <!---------------------------- Footer ----------------------------->
 
@@ -93,5 +109,34 @@
       <p class="footer__texto">Aplican términos y condiciones</p>
   </footer>
 
+ <script>
+    
+
+    function addproducto(id){
+        console.log(id);
+        let url= 'carrito.php';
+        let formData = new FormData();
+        formData.append('id',id);
+
+        fetch(url,{
+            method: 'POST',
+            body: formData,
+            mode: 'cors'
+
+        }).then(response => response.json())
+        .then(data=>{
+            if(data.ok){
+                let elemento = document.getElementById("num_cart");
+                elemento.innerHTML = data.numero;
+            }
+
+        });
+        
+    }
+ </script>
+
+
  </body>
+
+
  </html>
