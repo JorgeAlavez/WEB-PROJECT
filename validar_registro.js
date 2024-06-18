@@ -1,124 +1,47 @@
-$(document).ready(()=>{
-  const validarFormRegistro = new JustValidate("#registerForm",{
-    tooltip:{position:"bottom"}
-  });
-  const validarFormLogin = new JustValidate("#loginForm",{
-    tooltip:{position:"bottom"}
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  const registerForm = document.getElementById('registerForm');
+  registerForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevenir el envío del formulario hasta que sea validado
 
-  validarFormRegistro
-  .addField("#registerName",[
-    {
-      rule:"required",
-      errorMessage:"Ingresa tu nombre"
-    },
-    {
-      rule:"maxLength",
-      value:30,
-      errorMessage:"A lo más 30 dígitos"
-    }
-  ])
-  .addField("#registerLastName",[
-    {
-      rule:"required",
-      errorMessage:"Ingresa tus apellidos"
-    },
-    {
-      rule:"maxLength",
-      value:30,
-      errorMessage:"A lo más 30 dígitos"
-    }
-  ])
-  .addField("#registerEmail",[
-    {
-      rule: 'required',
-      errorMessage:"Ingresa un correo electronico"
-    },
-    {
-      rule: 'email',
-      errorMessage:"Formato de email invalido"
-    },
-  ])
-  .addField("#registerUser",[
-    {
-      rule:"required",
-      errorMessage:"Ingresa un nombre de usuario"
-    },
-    {
-      rule:"maxLength",
-      value:15,
-      errorMessage:"A lo más 15 dígitos"
-    }
-  ])
-  .addField("#registerPassword",[
-    {
-      rule:"required",
-      errorMessage:"Ingresa una contraseña"
-    },
-    {
-      rule: "contains",
-      params: {
-          contain: ["lowercase", "uppercase", "digit", "special"]
-      },
-      errorMessage: "La contraseña debe incluir al menos una letra minúscula, una letra mayúscula, un dígito y un carácter especial"
-    }
-  ])
+      // Obtener los valores de los campos
+      const name = document.getElementById('registerName').value.trim();
+      const lastName = document.getElementById('registerLastName').value.trim();
+      const email = document.getElementById('registerEmail').value.trim();
+      const username = document.getElementById('registerUser').value.trim();
+      const password = document.getElementById('registerPassword').value.trim();
 
-
-
-
-
-
-  validarFormLogin
-  addField("#loginEmail",[
-    {
-      rule: 'required',
-      errorMessage:"Ingresa un correo electronico"
-    },
-    {
-      rule: 'email',
-      errorMessage:"Formato de email invalido"
-    },
-  ])
-  .addField("#loginPassword",[
-    {
-      rule:"required",
-      errorMessage:"Ingresa una contraseña"
-    },
-    {
-      rule:"strongPassword",
-      errorMessage:"8 caracteres (1 minus, 1 mayus, 1 dígito)"
-    }
-  ])
-  
-  .onSuccess((evt)=>{
-    evt.preventDefault();
-    let email = $("#loginEmail").val();
-    let contrasena = $("#loginPassword").val();
-    $.ajax({
-      url:"./php/index_AX.php",
-      type:"POST",
-      data:{email:email, contrasena:contrasena},
-      cache:false,
-      success:(respAX)=>{
-        let objRespAX = JSON.parse(respAX);
-        let mensaje = "";
-        if(objRespAX.cod == 1) mensaje = objRespAX.msj + " " + objRespAX.data;
-        else mensaje = objRespAX.msj;
-        Swal.fire({
-          title:"TDAW-2024",
-          text: mensaje,
-          icon:objRespAX.icono,
-          didDestroy:()=>{
-            if(objRespAX.cod == 1){
-              sessionStorage.setItem("email",email);
-              window.location.href = "./php/privado.php";
-            }else{
-              window.location.reload();
-            }
-          }
-        });
+      // Validar los campos
+      let isValid = true;
+      if (name === "") {
+          alert("El campo de nombres es obligatorio.");
+          isValid = false;
       }
-    });
+      if (lastName === "") {
+          alert("El campo de apellidos es obligatorio.");
+          isValid = false;
+      }
+      if (!validateEmail(email)) {
+          alert("Por favor, introduce un correo electrónico válido.");
+          isValid = false;
+      }
+      if (username === "") {
+          alert("El campo de usuario es obligatorio.");
+          isValid = false;
+      }
+      if (password === "") {
+          alert("El campo de contraseña es obligatorio.");
+          isValid = false;
+      }
+
+      // Si todos los campos son válidos, enviar el formulario
+      if (isValid) {
+          registerForm.submit();
+      }
   });
-})
+
+  // Función para validar el formato del correo electrónico
+  function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+  }
+});

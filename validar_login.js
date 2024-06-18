@@ -1,61 +1,32 @@
-$(document).ready(() => {
-    const validarFormLogin = new JustValidate("#loginForm", {
-        tooltip: { position: "bottom" }
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevenir el envío del formulario hasta que sea validado
+
+        // Obtener los valores de los campos
+        const email = document.getElementById('loginEmail').value.trim();
+        const password = document.getElementById('loginPassword').value.trim();
+
+        // Validar los campos
+        let isValid = true;
+        if (!validateEmail(email)) {
+            alert("Por favor, introduce un correo electrónico válido.");
+            isValid = false;
+        }
+        if (password === "") {
+            alert("El campo de contraseña es obligatorio.");
+            isValid = false;
+        }
+
+        // Si todos los campos son válidos, enviar el formulario
+        if (isValid) {
+            loginForm.submit();
+        }
     });
 
-    validarFormLogin
-        .addField("#loginEmail", [
-            {
-                rule: 'required',
-                errorMessage: "Ingresa un correo electronico"
-            },
-            {
-                rule: 'email',
-                errorMessage: "Formato de email invalido"
-            },
-        ])
-        .addField("#loginPassword", [
-            {
-                rule: "required",
-                errorMessage: "Ingresa una contraseña"
-            },
-            {
-                rule: "contains",
-                params: {
-                    contain: ["lowercase", "uppercase", "digit", "special"]
-                },
-                errorMessage: "La contraseña debe incluir al menos una letra minúscula, una letra mayúscula, un dígito y un carácter especial"
-            }
-            
-        ])
-        .onSuccess((evt) => {
-            evt.preventDefault();
-            let email = $("#loginEmail").val();
-            let contrasena = $("#loginPassword").val();
-            $.ajax({
-                url: "./php/index_AX.php",
-                type: "POST",
-                data: { email: email, contrasena: contrasena },
-                cache: false,
-                success: (respAX) => {
-                    let objRespAX = JSON.parse(respAX);
-                    let mensaje = "";
-                    if (objRespAX.cod == 1) mensaje = objRespAX.msj + " " + objRespAX.data;
-                    else mensaje = objRespAX.msj;
-                    Swal.fire({
-                        title: "TDAW-2024",
-                        text: mensaje,
-                        icon: objRespAX.icono,
-                        didDestroy: () => {
-                            if (objRespAX.cod == 1) {
-                                sessionStorage.setItem("email", email);
-                                window.location.href = "./php/privado.php";
-                            } else {
-                                window.location.reload();
-                            }
-                        }
-                    });
-                }
-            });
-        });
+    // Función para validar el formato del correo electrónico
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
 });
