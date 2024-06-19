@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="./js/jquery-3.7.1.min.js"></script>
-    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/justValidate.min.js"></script>
-    <script src="./js/sweetAlert.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..
     900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/estilos.css">
@@ -32,14 +28,14 @@
                 <!--Formularios de Login y Registro-->
             <div class="contenedor__login-register">      
                      <!-- Login -->
-                <form action="login_action" class="formulario__login" id="loginForm" novalidate="novalidate">  
+                <form action="php/login_usuario_be.php" method="post" class="formulario__login" id="loginForm" novalidate="novalidate">  
                     <h2>Iniciar sesión</h2>
                     <input type="text" id="loginEmail" placeholder="Correo Electronico">
                     <input type="password" id="loginPassword" placeholder="Contraseña">
                     <button type="submit">Entrar</button>
                 </form>
                 <!-- Registro -->
-                <form action="registro_usuario_be.php" method="post" class="formulario__register" id="registerForm" novalidate="novalidate">
+                <form action="php/registro_usuario_be.php" method="post" class="formulario__register" id="registerForm">
                     <h2>Registrarse</h2>
                     <input type="text" id="registerName" placeholder="Nombres:" name="nombre">
                     
@@ -59,5 +55,6 @@
     <script src="js/script.js"></script>
     <script src="js/validar_registro.js"></script>
     <script src="js/validar_login.js"></script>
+    
 </body>
 </html>
