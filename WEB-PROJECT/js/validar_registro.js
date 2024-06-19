@@ -89,7 +89,7 @@ const validarFormRegistro = new JustValidate("#registerForm", {
                     icon: objRespAX.icono,
                     didDestroy: () => {
                         if (objRespAX.cod == 1) {
-                            window.location.href = "principal.html";
+                            window.location.href = "https://localhost/tienda_virtualv2/index.php";
                         } else {
                             window.location.reload();
                         }
