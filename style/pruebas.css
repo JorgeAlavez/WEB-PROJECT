@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Asegura que html y body ocupen todo el ancho */
+}
+
+.headerColor{
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+.top-section {
+    height: 300px; /* Altura de la sección */
+    background-color: #3498db; /* Color de fondo */
+    width: 100%; /* Asegura que la sección ocupe todo el ancho disponible */
+}

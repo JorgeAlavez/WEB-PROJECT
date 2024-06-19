@@ -1,3 +1,8 @@
+<?php
+// Permitir solicitudes de cualquier origen
+header('Access-Control-Allow-Origin: *');
+?>
+
 <!DOCTYPE html>
 <!-- https://localhost/tienda_virtualv2/index.php -->
 <html lang="en">

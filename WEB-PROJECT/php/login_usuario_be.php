@@ -3,9 +3,9 @@
     session_start();
 
     $correo = $_POST['correo_electronico'];
-    $usuario = $_POST['usuario'];
+    $password = $_POST['password'];
 
-    $query = "SELECT *  FROM usuario WHERE correo = '$correo' AND contrasena = '$contrasena' ";
+    $query = "SELECT *  FROM usuario WHERE correo = '$correo' AND password = '$contrasena' ";
     $res = mysqli_query($conexion, $query);
 
     if($res){

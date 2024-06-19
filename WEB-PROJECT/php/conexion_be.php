@@ -1,6 +1,6 @@
 <?php 
 
-    $conexion = mysqli_connect("localhost", "root", "", "login_register_db");
+    $conexion = mysqli_connect("localhost", "root", "", "tienda_virtualv2");
     
     /*if($conexion){
         echo 'conectado exitosamente a la DB';
