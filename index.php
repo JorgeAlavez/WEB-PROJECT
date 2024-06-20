@@ -1,6 +1,9 @@
 <?php
 // Permitir solicitudes de cualquier origen
 header('Access-Control-Allow-Origin: *');
+
+session_start();
+print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
